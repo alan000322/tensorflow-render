@@ -1,6 +1,7 @@
 <html lang='en'>
 <head>
   <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
   <link rel="stylesheet" href="../static/bootstrap-4.2.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +18,7 @@
 <body>
 <div class="container">
   <div class='center'>
-    <h2>Are You Wearing a MASK?</h1>
+    <h2 class="fonts text-center">Are You Wearing a MASK?</h2>
     <div class='content'>
       <div class='no-display'>
         <input id='file-input'
@@ -27,22 +28,23 @@
                accept='image/*'
                onchange='showPicked(this)'>
       </div>
-      <div class="container-fluid">
-        <div class="upload-label row d-flex justify-content-end upload-area">
-          <div class="col-md-9 d-flex justify-content-center align-items-center">
-            <div id='upload-label'>No file chosen</div>
-          </div>
-          <div class="col-md-2 d-flex align-items-center justify-content-md-end justify-content-center">
-            <button class='choose-file-button' type='button' onclick='showPicker()'>
-              <i class="fa fa-upload" aria-hidden="true"></i>
-            </button>
-          </div>
+      <div class="row upload-label d-flex justify-content-md-end">
+        <div class="col-md-7 d-flex justify-content-center align-items-center">
+          <div id='upload-label'>No file chosen</div>
+        </div>
+        <div class="col-md-2 d-flex align-items-center justify-content-md-end justify-content-center">
+          <button class='choose-file-button' type='button' onclick='showPicker()'>
+            <i class="fa fa-upload" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
       <div class="mt-4">
         <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
       </div>
-      <div class='analyze'>
+      <div class='analyze d-flex justify-content-center'>
+        <button class='choose-file-button-md' type='button' onclick='showPicker()'>
+          <i class="fa fa-upload" aria-hidden="true"></i>
+        </button>
         <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
       </div>
       <div class="row d-flex justify-content-center mt-4">

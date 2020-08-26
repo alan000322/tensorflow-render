@@ -19,6 +19,7 @@ function analyze() {
   if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
   el("analyze-button").innerHTML = "Analyzing...";
+  el("result-label").innerHTML = "等待結果中...";
   var xhr = new XMLHttpRequest();
   var loc = window.location;
   xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
@@ -33,7 +34,7 @@ function analyze() {
       if      ( response["result"] == 0 )  res = "戴口罩" ;
       else if ( response["result"] == 1 )  res = "沒戴口罩" ;
       else if ( response["result"] == 2 )  res = "沒戴好口罩" ; 
-      el("result-label").innerHTML = `Result = ${res}`;
+      el("result-label").innerHTML = `結果： ${res}`;
     }
     el("analyze-button").innerHTML = "Analyze";
   };

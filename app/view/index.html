@@ -3,6 +3,7 @@
   <meta charset='utf-8'>
   <link rel="stylesheet" href="../static/bootstrap-4.2.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <title>MASK MODEL</title>
   <link rel='stylesheet' href='../static/style.css'>
   <!-- Optional JavaScript -->
@@ -16,7 +17,7 @@
 <body>
 <div class="container">
   <div class='center'>
-    <h1 class="font-weight-light">Are You Wearing a MASK!!!!!!!!!</h1>
+    <h2>Are You Wearing a MASK?</h1>
     <div class='content'>
       <div class='no-display'>
         <input id='file-input'
@@ -26,27 +27,27 @@
                accept='image/*'
                onchange='showPicked(this)'>
       </div>
-      <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
-      <div class='upload-label'>
-        <label id='upload-label'>No file chosen</label>
+      <div class="container-fluid">
+        <div class="upload-label row d-flex justify-content-end upload-area">
+          <div class="col-md-9 d-flex justify-content-center align-items-center">
+            <div id='upload-label'>No file chosen</div>
+          </div>
+          <div class="col-md-2 d-flex align-items-center justify-content-md-end justify-content-center">
+            <button class='choose-file-button' type='button' onclick='showPicker()'>
+              <i class="fa fa-upload" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
       </div>
-      <div>
+      <div class="mt-4">
         <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
       </div>
       <div class='analyze'>
         <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
       </div>
-      <div class='result-label'>
-        <label id='result-label'></label>
-      </div>
-      <div class="row">
-        <div class="col-5"></div>
-        <div class="col-2 alert alert-warning">
-          0: 有戴口罩<br>
-          1: 沒戴口罩<br>
-          2: 沒戴好口罩
+      <div class="row d-flex justify-content-center mt-4">
+        <div class="result-label-text" id='result-label'>
         </div>
-        <div class="col-5"></div>
       </div>
     </div>
   </div>

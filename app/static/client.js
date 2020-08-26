@@ -29,7 +29,11 @@ function analyze() {
   xhr.onload = function(e) {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
-      el("result-label").innerHTML = `Result = ${response["result"]}`;
+      var res = "";
+      if     ( response["result"] == 0 )  res = "戴口罩" ;
+      elseif ( response["result"] == 1 )  res = "沒戴口罩" ;
+      elseif ( response["result"] == 2 )  res = "沒戴好口罩" ; 
+      el("result-label").innerHTML = `Result = ${res}`;
     }
     el("analyze-button").innerHTML = "Analyze";
   };
